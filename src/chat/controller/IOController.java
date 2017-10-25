@@ -1,6 +1,6 @@
 package chat.controller;
 
-public class PopupDisplay
+public class IOController
 {
 
 }
