@@ -17,10 +17,10 @@ public class Movie
 		this.title = "";
 		this.genre = genre;
 		this.ratingMPAA = ratingMPAA;
-		this.review = review;
-		this.length = 20;
+		this.review = "This is the best movie evaar! XD";
+		this.length = 120;
 		this.releaseDate = releaseDate;
-		this.starScore = Double.NaN;
+		this.starScore = 9.99;
 		this.setTitle(title);
 		
 	}
@@ -32,37 +32,42 @@ public class Movie
 
 	public String getTitle()
 	{
+		this.title = "Title of movie";
 		return title;
 	}
 
 	public String getGenre()
 	{
-		this.genre = "";
+		this.genre = "some genre";
 		return genre;
 	}
 
 	public String getRatingMPAA()
 	{
+		this.ratingMPAA = "G";
 		return ratingMPAA ;
 	}
 
 	public String getReview()
 	{
+		this.review = "This was very good";
 		return review;
 	}
 
 	public int getLength()
 	{
+		this.length = 120;
 		return length;
 	}
 
 	public LocalDate getReleaseDate()
 	{
-		return releaseDate;
+		return null;
 	}
 
 	public double getStarScore()
 	{
+		this.starScore = 9.99;
 		return starScore;
 	}
 
@@ -94,7 +99,7 @@ public class Movie
 
 	public void setReleaseDate(LocalDate releaseDate)
 	{
-		this.releaseDate = releaseDate;
+		this.releaseDate = null;
 	}
 
 	public void setStarScore(double starScore)
