@@ -12,29 +12,35 @@ public class Chatbot
 	private String [] verbs;
 	private String [] topics;
 	private String [] followUps;
-	private String [] questions;
 	private String username;
 	private String content;
 	private String intro;
+	private String [] questions;
 	private LocalTime currentTime;
 	
 	public Chatbot(String username)
 	{
-		this.movieList = null;
+		this.movieList = new ArrayList<Movie>();
 		this.shoppingList = new ArrayList<String>();
-		this.cuteAnimalMemes = null;
-		this.currentTime = null;
-		this.questions = null;
+		this.cuteAnimalMemes = new ArrayList<String>();
 		this.username = username;
-		this.content = null;
 		this.intro = null;
 		this.currentTime = null;
-		this.topics = null;
+		this.questions = new String [10];
+		this.content = null;
+		this.topics = new String [7];
 		this.verbs = new String [4];
-		this.followUps = null;
+		this.followUps = new String [5];
 		
 		buildVerbs();
 		buildShoppingList();
+		buildMovieList();
+		buildQuestions();
+		buildCuteAnimals();
+		getCurrentTime();
+		buildChatbotResponse();
+		
+
 	}
 	
 	private void buildVerbs()
@@ -48,6 +54,17 @@ public class Chatbot
 	private void buildMovieList()
 	{
 		
+		new Movie("Star Wars");
+		new Movie("21 Jump Street");
+		new Movie("Hidden Figures");
+		new Movie("Pirates of the Caribbean");
+		new Movie("Spider Man");
+		
+		movieList.add(new Movie("Star Wars"));
+		movieList.add(new Movie("21 Jump Street"));
+		movieList.add(new Movie("Hidden Figures"));
+		movieList.add(new Movie("Pirates of the Caribbean"));
+		movieList.add(new Movie("Spider Man"));
 	}
 	
 	private void buildShoppingList()
@@ -61,7 +78,11 @@ public class Chatbot
 	
 	private void buildCuteAnimals()
 	{
-		
+		cuteAnimalMemes.add("floofer");
+		cuteAnimalMemes.add("puppy");
+		cuteAnimalMemes.add("pupper");
+		cuteAnimalMemes.add("otter");
+		cuteAnimalMemes.add("kittie");
 	}
 	
 	private void buildQuestions()
@@ -72,7 +93,26 @@ public class Chatbot
 	public String processConversation(String input)
 	
 	{
-		return null;
+		String chatbotResponse = "";
+		chatbotResponse += "you said: " + "\n" + input + "\n";
+		chatbotResponse += buildChatbotResponse();
+		
+		return chatbotResponse;
+	}
+	private String buildChatbotResponse()
+	{
+		String response ="I ";
+		int random = (int) (Math.random() * verbs.length);
+		
+		response += verbs[random];
+		
+		random = (int) (Math.random() * topics.length);
+		response += " " + topics[random] + ".";
+		
+		random = (int) (Math.random() * questions.length);
+		response += questions [random];
+		
+		return response;
 	}
 	
 	public boolean lengthChecker(String input)
@@ -92,9 +132,14 @@ public class Chatbot
 		return false;
 	}
 	
-	public boolean userNameChecker(String input)
+	public boolean userNameChecker(String currentinput)
 	{
-		return false;
+		boolean hasUsername = false;
+		if(currentinput.indexOf(this.getUsername()) > -1);
+			{
+				hasUsername =true;
+			}
+		return hasUsername;
 	}
 	
 	public boolean contentChecker(String contentCheck)
@@ -109,7 +154,12 @@ public class Chatbot
 	
 	public boolean shoppingListChecker(String shoppingItem)
 	{
-		return false;
+		for (String item: shoppingList)	
+			
+		if (shoppingItem i= null
+		{
+			return true;
+		}
 	}
 	
 	public boolean movieTitleChecker(String title)
@@ -123,7 +173,11 @@ public class Chatbot
 	}
 
 	public boolean quitChecker(String exitString)
-	{
+	{	
+		if (exitString.equalsIgnoreCase("quit"))
+		{
+			return true;
+		}
 		return false;
 	}
 
@@ -184,7 +238,7 @@ public class Chatbot
 	
 	public LocalTime getCurrentTime()
 	{
-		return null;
+		return currentTime;
 	}
 	
 	public void setUsername(String username)

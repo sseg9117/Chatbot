@@ -119,7 +119,7 @@ public class ChatbotTest
 	public void testMovieTitleChecker()
 	{
 		assertFalse("Movie titles are not blank", testedChatbot.movieTitleChecker(""));
-		assertTrue("Spiderman came out this year", testedChatbot.movieTitleChecker("Spiderman"));
+		assertTrue("Spiderman came out this year", testedChatbot.movieTitleChecker("Spider Man"));
 		assertTrue("Hidden Figures is a class movie", testedChatbot.movieTitleChecker("Hidden Figures"));
 	}
 
@@ -169,7 +169,7 @@ public class ChatbotTest
 			{
 				otterCount += 1;
 			}
-			if (cute.toUpperCase().contains("floofer"))
+			if (cute.toUpperCase().contains("FLOOFER"))
 			{
 				flooferCount += 1;
 			}
