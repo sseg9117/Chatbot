@@ -69,9 +69,9 @@ public class Chatbot
 	
 	private void buildShoppingList()
 	{
+		shoppingList.add("protien");
 		shoppingList.add("snacks");
 		shoppingList.add("veggies");
-		shoppingList.add("protien");
 		shoppingList.add("slug bait");
 		shoppingList.add("gross things");
 	}
@@ -134,12 +134,18 @@ public class Chatbot
 	
 	public boolean userNameChecker(String currentinput)
 	{
-		boolean hasUsername = false;
-		if(currentinput.indexOf(this.getUsername()) > -1);
+		if(currentinput == null || currentinput.length() == 0 || !currentinput.substring(0, 1).equals("@"))
+		{
+			return false;
+		}
+		for(int i = 1; i < currentinput.length(); i++)
+		{
+			if(currentinput.substring(i, i + 1).equals("@"))
 			{
-				hasUsername =true;
+				return false;
 			}
-		return hasUsername;
+		}
+		return false;
 	}
 	
 	public boolean contentChecker(String contentCheck)
@@ -156,10 +162,11 @@ public class Chatbot
 	{
 		for (String item: shoppingList)	
 			
-		if (shoppingItem i= null
+		if (shoppingItem.indexOf(item) >= 0)
 		{
 			return true;
 		}
+		return false;
 	}
 	
 	public boolean movieTitleChecker(String title)
@@ -174,10 +181,15 @@ public class Chatbot
 
 	public boolean quitChecker(String exitString)
 	{	
-		if (exitString.equalsIgnoreCase("quit"))
+//		if(exitString.equalsIgnoreCase("null"))
+//		{
+//			return false;
+//		}
+		if (exitString !=null && exitString.equalsIgnoreCase("quit"))
 		{
 			return true;
 		}
+
 		return false;
 	}
 
@@ -233,7 +245,7 @@ public class Chatbot
 
 	public String getIntro()
 	{
-		return null;
+		return intro;
 	}
 	
 	public LocalTime getCurrentTime()
