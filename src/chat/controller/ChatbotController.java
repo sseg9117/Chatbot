@@ -3,12 +3,12 @@ package chat.controller;
 import chat.model.Chatbot;
 import chat.view.PopupDisplay;
 
-public class ChatController
+public class ChatbotController
 {
 	private Chatbot chatbot;
 	private PopupDisplay display;
 	
-	public ChatController()
+	public ChatbotController()
 	{
 		chatbot = new Chatbot("Sheradon Segota");
 		display = new PopupDisplay();
