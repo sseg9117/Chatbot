@@ -69,11 +69,9 @@ public class Chatbot
 	
 	private void buildShoppingList()
 	{
-		shoppingList.add("protien");
+		shoppingList.add("protein");
 		shoppingList.add("snacks");
 		shoppingList.add("veggies");
-		shoppingList.add("slug bait");
-		shoppingList.add("gross things");
 	}
 	
 	private void buildCuteAnimals()
@@ -89,7 +87,11 @@ public class Chatbot
 	{
 		
 	}
-	
+	/**
+	 * takes user text input and processes it and returns a string, and combines user in and chatbot string into one string and returns it.
+	 * @param input User supplied text.
+	 * @return Combined user input and chatbot response. 
+	 */
 	public String processConversation(String input)
 	
 	{
@@ -99,6 +101,10 @@ public class Chatbot
 		
 		return chatbotResponse;
 	}
+	/**
+	 * building a random response from using the chatbot's sentence part arrays.
+	 * @return the random response of the chatbot.
+	 */
 	private String buildChatbotResponse()
 	{
 		String response ="I ";
@@ -170,10 +176,11 @@ public class Chatbot
 	public boolean shoppingListChecker(String shoppingItem)
 	{
 		for (String item: shoppingList)	
-			
-		if (shoppingItem.indexOf(item) >= 0)
-		{
-			return true;
+		{		
+			if (shoppingItem.indexOf(item) >= 0)
+			{
+				return true;
+			}
 		}
 		return false;
 	}

@@ -14,13 +14,14 @@ public class Movie
 	
 	public Movie(String title, String genre, String ratingMPAA, String review, int length, LocalDate releaseDate, double starScore)
 	{
-		this.title = "";
-		this.genre = genre;
-		this.ratingMPAA = ratingMPAA;
+		this.title = "    ";
+		this.genre = "G";
+		this.ratingMPAA = "G";
 		this.review = "This is the best movie evaar! XD";
 		this.length = 120;
 		this.releaseDate = releaseDate;
 		this.starScore = 9.99;
+		this.length = 10;
 		this.setTitle(title);
 		
 	}
@@ -32,42 +33,36 @@ public class Movie
 
 	public String getTitle()
 	{
-		this.title = "Title of movie";
 		return title;
 	}
 
 	public String getGenre()
 	{
-		this.genre = "some genre";
 		return genre;
 	}
 
 	public String getRatingMPAA()
 	{
-		this.ratingMPAA = "G";
 		return ratingMPAA ;
 	}
 
 	public String getReview()
 	{
-		this.review = "This was very good";
 		return review;
 	}
 
 	public int getLength()
 	{
-		this.length = 120;
 		return length;
 	}
 
 	public LocalDate getReleaseDate()
 	{
-		return null;
+		return releaseDate;
 	}
 
 	public double getStarScore()
 	{
-		this.starScore = 9.99;
 		return starScore;
 	}
 
@@ -84,7 +79,7 @@ public class Movie
 
 	public void setRatingMPAA(String ratingMPAA)
 	{
-		this.ratingMPAA = ratingMPAA;
+		this.ratingMPAA = "G";
 	}
 
 	public void setReview(String review)
@@ -99,7 +94,7 @@ public class Movie
 
 	public void setReleaseDate(LocalDate releaseDate)
 	{
-		this.releaseDate = null;
+		this.releaseDate = releaseDate;
 	}
 
 	public void setStarScore(double starScore)
