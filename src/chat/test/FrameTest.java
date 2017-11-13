@@ -8,7 +8,7 @@ import org.junit.Test;
 
 import chat.controller.ChatbotController;
 import chat.view.ChatFrame;
-import chat.view.ChatPanel;
+import chat.view.ChatFrame;
 
 public class FrameTest
 {
@@ -37,7 +37,7 @@ public class FrameTest
 	public void testSetupFrame()
 	{
 		assertNotNull("Frame needs a ChatPanel initialized", testedFrame.getContentPane());
-		assertTrue("Panel needs to be a ChatPanel", testedFrame.getContentPane() instanceof ChatPanel);
+		assertTrue("Panel needs to be a ChatPanel", testedFrame.getContentPane() instanceof ChatFrame);
 		assertTrue("Application needs a title with more than 5 letters", testedFrame.getTitle().length() > 5);
 		assertTrue("Application size must be at least 500 pixels wide", testedFrame.getWidth() >= 500);
 		assertTrue("Application size must be at least 500 pixels high", testedFrame.getHeight() >= 500);
