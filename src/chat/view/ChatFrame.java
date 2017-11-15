@@ -1,7 +1,12 @@
 package chat.view;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.SpringLayout;
+
 import chat.controller.ChatbotController;
 
 public class ChatFrame extends JFrame
@@ -9,16 +14,17 @@ public class ChatFrame extends JFrame
 	
 	private ChatbotController appController;
 //	private ChatPanel appPanel;
-	private JButton firstButton;
+
+	
 	public ChatFrame(ChatbotController appController)
 	{
 		super();
-		this.setAppController(appController);
 //		appPanel = new ChatPanel(appController);
-		firstButton = new JButton("Button 1");
+		
+		
 		setupFrame();
 	}
-	
+
 	private void setupFrame()
 	{
 		this.setSize(500,500);
@@ -26,14 +32,7 @@ public class ChatFrame extends JFrame
 //		this.setContentPane(appPanel);
 		this.setResizable(false);
 		this.setVisible(true);
-		
-		setupPanel();
-	}
-	
-	private void setupPanel()
-	{
-		this.add(firstButton);
-	}
+	}	
 
 }
 
