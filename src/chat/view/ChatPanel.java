@@ -15,8 +15,8 @@ import chat.controller.ChatbotController;
 public class ChatPanel extends JPanel
 {
 	private ChatbotController appController;
-	private JButton firstButton;
-	private JTextField inputFeild;
+	private JButton chatButton;
+	private JTextField inputField;
 	private JTextArea chatArea;
 	private SpringLayout baseLayout;
 	
@@ -24,8 +24,13 @@ public class ChatPanel extends JPanel
 	{
 		super();
 		this.appController = appController;
-		firstButton = new JButton("Button 1");
+		//Initialize GUI data members
+		chatButton = new JButton("Chat Button");
+		chatArea = new JTextArea(10, 25);
+		inputField = new JTextField(25);
 		baseLayout = new SpringLayout();	
+		
+		
 		
 		setupPanel();
 		setupLayout();
@@ -35,7 +40,7 @@ public class ChatPanel extends JPanel
 
 	private void setupPanel()
 	{
-		this.add(firstButton);
+		this.add(chatButton);
 		this.setLayout(baseLayout);
 	}
 	
@@ -46,7 +51,7 @@ public class ChatPanel extends JPanel
 	
 	private void setupListeners()
 	{
-		firstButton.addActionListener(new ActionListener()
+		chatButton.addActionListener(new ActionListener()
 		{
 			public void actionPerformed(ActionEvent click)
 			{
