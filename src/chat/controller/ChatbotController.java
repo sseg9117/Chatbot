@@ -1,17 +1,20 @@
 package chat.controller;
 
 import chat.model.Chatbot;
+import chat.view.ChatFrame;
 import chat.view.PopupDisplay;
 
 public class ChatbotController
 {
 	private Chatbot chatbot;
 	private PopupDisplay display;
+	private ChatFrame appFrame;
 	
 	public ChatbotController()
 	{
 		chatbot = new Chatbot("Sheradon Segota");
 		display = new PopupDisplay();
+		appFrame = new ChatFrame(this);
 	}
 
 	public void start()
@@ -24,6 +27,8 @@ public class ChatbotController
 			response = display.collectResponse(response);
 		}
 	}// updating belongs to the end of your while loop
+	
+//	public String interactWithChatbot(String input)
 	
 	private String popupChat(String chat)
 	{
