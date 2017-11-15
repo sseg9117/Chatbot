@@ -30,8 +30,6 @@ public class ChatPanel extends JPanel
 		inputField = new JTextField(20);
 		baseLayout = new SpringLayout();	
 		
-		
-		
 		setupPanel();
 		setupLayout();
 		setupListeners();

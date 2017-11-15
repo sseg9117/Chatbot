@@ -13,15 +13,13 @@ public class ChatFrame extends JFrame
 {
 	
 	private ChatbotController appController;
-//	private ChatPanel appPanel;
+	private ChatPanel appPanel;
 
-	
 	public ChatFrame(ChatbotController appController)
 	{
 		super();
 		this.appController = appController;
-//		appPanel = new ChatPanel(appController);
-		
+		appPanel = new ChatPanel(appController);		
 		setupFrame();
 	}
 
@@ -29,7 +27,7 @@ public class ChatFrame extends JFrame
 	{
 		this.setSize(500,500);
 		this.setTitle("Chatbot 2017");
-//		this.setContentPane(appPanel);
+		this.setContentPane(appPanel);
 		this.setResizable(false);
 		this.setVisible(true);
 	}	
