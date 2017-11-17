@@ -12,7 +12,6 @@ import javax.swing.SpringLayout;
 
 import chat.controller.ChatbotController;
 
-
 public class ChatPanel extends JPanel
 {
 	private ChatbotController appController;
@@ -20,25 +19,26 @@ public class ChatPanel extends JPanel
 	private JTextField inputField;
 	private JTextArea chatArea;
 	private SpringLayout baseLayout;
-	
+
 	public ChatPanel(ChatbotController appController)
 	{
 		super();
 		this.appController = appController;
-		//Initialize GUI data members
+		// Initialize GUI data members
 		chatButton = new JButton("Chat Button");
 		chatArea = new JTextArea(10, 25);
 		inputField = new JTextField(20);
-		baseLayout = new SpringLayout();	
-		
+		baseLayout = new SpringLayout();
+
 		setupPanel();
 		setupLayout();
 		setupListeners();
-		
+
 	}
-/**
- * this is where you setup all your stuff like buttons and windows etc..
- */
+
+	/**
+	 * this is where you setup all your stuff like buttons and windows etc..
+	 */
 	private void setupPanel()
 	{
 		this.setBackground(Color.CYAN);
@@ -46,10 +46,13 @@ public class ChatPanel extends JPanel
 		this.add(chatButton);
 		this.add(inputField);
 		this.add(chatArea);
+		chatArea.setEnabled(false);
+		chatArea.setEditable(false);
 	}
-/**
- * this is where all the stuff you put in above this is locatoin on the frame
- */
+
+	/**
+	 * this is where all the stuff you put in above this is locatoin on the frame
+	 */
 	private void setupLayout()
 	{
 		baseLayout.putConstraint(SpringLayout.NORTH, inputField, 0, SpringLayout.NORTH, chatButton);
@@ -60,16 +63,21 @@ public class ChatPanel extends JPanel
 		baseLayout.putConstraint(SpringLayout.WEST, chatArea, 25, SpringLayout.WEST, this);
 		baseLayout.putConstraint(SpringLayout.EAST, chatArea, -25, SpringLayout.EAST, this);
 	}
-/**
- * this allows the things to have actions
- */
+
+	/**
+	 * this allows the things to have actions
+	 */
 	private void setupListeners()
 	{
 		chatButton.addActionListener(new ActionListener()
 		{
 			public void actionPerformed(ActionEvent click)
 			{
-				return;
+				String userText = inputField.getText();
+				String displayText = appController.interactWithChatbot(userText);
+				chatArea.append(displayText);
+				inputField.setText("");
+						 
 			}
 		});
 	}

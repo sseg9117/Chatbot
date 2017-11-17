@@ -39,4 +39,9 @@ public class ChatbotController
 		return chatbotSays;
 	}
 
+	public String interactWithChatbot(String userText)
+	{
+		return userText;
+	}
+
 } 
