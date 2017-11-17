@@ -19,7 +19,7 @@ public class ChatbotController
 
 	public void start()
 	{
-		String response = display.collectResponse("What do you want to talk about?");
+		display.displayText("Welcome to Chatbot");
 		
 //		while (chatbot.lengthChecker(response) && !chatbot.quitChecker(response))
 //		{
@@ -28,7 +28,14 @@ public class ChatbotController
 //		}
 	} // updating belongs to the end of your while loop
 	
-//	public String interactWithChatbot(String input)
+	public String interactWithChatbot(String input)
+	{
+		String chatbotSays = "";
+		
+		chatbotSays += chatbot.processConversation(input);
+		
+		return chatbotSays;
+	}
 	
 	private String popupChat(String chat)
 	{
@@ -37,11 +44,6 @@ public class ChatbotController
 		chatbotSays += chatbot.processConversation(chat);
 		
 		return chatbotSays;
-	}
-
-	public String interactWithChatbot(String userText)
-	{
-		return userText;
 	}
 
 } 
