@@ -30,7 +30,10 @@ public class Movie
 	{
 
 	}
-
+/**
+ * gets all the contructures you initalized up top
+ * @return sets them to what you want
+ */
 	public String getTitle()
 	{
 		return title;

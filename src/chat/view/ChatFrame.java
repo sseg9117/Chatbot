@@ -6,7 +6,9 @@ import chat.controller.ChatbotController;
 
 public class ChatFrame extends JFrame
 {
-	
+	/**
+	 * get access to other clases/packages
+	 */
 	private ChatbotController appController;
 	private ChatPanel appPanel;
 
@@ -17,7 +19,10 @@ public class ChatFrame extends JFrame
 		appPanel = new ChatPanel(appController);		
 		setupFrame();
 	}
-
+/**
+ * sets the size of the popup frame when you start program.
+ * and puts name on it.
+ */
 	private void setupFrame()
 	{
 		this.setSize(500,500);

@@ -31,7 +31,9 @@ public class Chatbot
 		this.topics = new String [7];
 		this.verbs = new String [4];
 		this.followUps = new String [5];
-		
+		/**
+		 * this is all the things initialized
+		 */
 		buildVerbs();
 		buildShoppingList();
 		buildMovieList();
@@ -42,7 +44,9 @@ public class Chatbot
 		
 
 	}
-	
+	/**
+	 * this builds the verb list
+	 */
 	private void buildVerbs()
 	{
 		verbs[0] = "like";
@@ -50,7 +54,9 @@ public class Chatbot
 		verbs[2] = "ambivalent about";
 		verbs[3] = "am thinking about";
 	}
-	
+	/**
+	 * this builds the movie list
+	 */
 	private void buildMovieList()
 	{
 		
@@ -66,14 +72,18 @@ public class Chatbot
 		movieList.add(new Movie("Pirates of the Caribbean"));
 		movieList.add(new Movie("Spider Man"));
 	}
-	
+	/**
+	 * this builds the shopping list
+	 */
 	private void buildShoppingList()
 	{
 		shoppingList.add("protein");
 		shoppingList.add("snacks");
 		shoppingList.add("veggies");
 	}
-	
+	/**
+	 * this builds the cute animal list
+	 */
 	private void buildCuteAnimals()
 	{
 		cuteAnimalMemes.add("floofer");

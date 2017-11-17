@@ -36,7 +36,9 @@ public class ChatPanel extends JPanel
 		setupListeners();
 		
 	}
-
+/**
+ * this is where you setup all your stuff like buttons and windows etc..
+ */
 	private void setupPanel()
 	{
 		this.setBackground(Color.CYAN);
@@ -45,7 +47,9 @@ public class ChatPanel extends JPanel
 		this.add(inputField);
 		this.add(chatArea);
 	}
-	
+/**
+ * this is where all the stuff you put in above this is locatoin on the frame
+ */
 	private void setupLayout()
 	{
 		baseLayout.putConstraint(SpringLayout.NORTH, inputField, 0, SpringLayout.NORTH, chatButton);
@@ -56,7 +60,9 @@ public class ChatPanel extends JPanel
 		baseLayout.putConstraint(SpringLayout.WEST, chatArea, 25, SpringLayout.WEST, this);
 		baseLayout.putConstraint(SpringLayout.EAST, chatArea, -25, SpringLayout.EAST, this);
 	}
-	
+/**
+ * this allows the things to have actions
+ */
 	private void setupListeners()
 	{
 		chatButton.addActionListener(new ActionListener()
