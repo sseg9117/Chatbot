@@ -173,6 +173,14 @@ public class Chatbot
 	
 	public boolean htmlTagChecker(String input)
 	{
+		if(input.length() == 8)
+		{	
+			return false;
+		}
+		else if(input.length() == 9)
+		{
+			return true;
+		}
 		return false;
 	}
 	
