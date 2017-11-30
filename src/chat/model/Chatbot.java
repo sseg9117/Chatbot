@@ -173,10 +173,20 @@ public class Chatbot
 	
 	public boolean htmlTagChecker(String input)
 	{
-		if(input.contains("<B> </B>")
+		if(input.contains("<P>"))
 		{	
+			return true;
+		}
+		if(input.contains("HREF") && (input.contains("=")))
+		{
 			return false;
 		}
+		if(input.indexOf(">") < input.lastIndexOf(">") && input.indexOf("<") < input.lastIndexOf("<"))
+		{
+			return true;
+		}
+		
+		return false;
 
 	}
 	
