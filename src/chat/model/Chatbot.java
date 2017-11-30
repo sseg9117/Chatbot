@@ -173,15 +173,11 @@ public class Chatbot
 	
 	public boolean htmlTagChecker(String input)
 	{
-		if(input.length() == 8)
+		if(input.contains("<B> </B>")
 		{	
 			return false;
 		}
-		else if(input.length() == 9)
-		{
-			return true;
-		}
-		return false;
+
 	}
 	
 	public boolean userNameChecker(String currentinput)
@@ -268,7 +264,7 @@ public class Chatbot
 
 	public String [] getQuestions()
 	{
-		return null;
+		return questions;
 	}
 	
 	public String[] getVerbs()

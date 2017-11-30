@@ -8,4 +8,9 @@ public class PopupDisplay
 		return null;
 	}
 
+	public void displayText(String string)
+	{
+		
+	}
+
 }
