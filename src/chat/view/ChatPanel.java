@@ -12,6 +12,7 @@ import javax.swing.JTextField;
 import javax.swing.SpringLayout;
 
 import chat.controller.ChatbotController;
+import javax.swing.JScrollPane;
 
 public class ChatPanel extends JPanel
 {
@@ -22,6 +23,7 @@ public class ChatPanel extends JPanel
 	private JTextArea chatArea;
 	private SpringLayout baseLayout;
 	private JLabel infoLabel;
+	private JScrollPane chatScrollPane;
 
 	public ChatPanel(ChatbotController appController)
 	{
@@ -32,8 +34,10 @@ public class ChatPanel extends JPanel
 		checkerButton = new JButton("Checker");
 		chatArea = new JTextArea(10, 25);
 		inputField = new JTextField(20);
+		chatScrollPane = new JScrollPane();
 		infoLabel = new JLabel("Type to chat with the chatbot");
 
+		setupScrollPane();
 		setupPanel();
 		setupLayout();
 		setupListeners();
@@ -59,6 +63,12 @@ public class ChatPanel extends JPanel
 	/**
 	 * this is where all the stuff you put in above this is locatoin on the frame
 	 */
+	private void setupScrollPane()
+	{
+		chatScrollPane.setViewportView(chatArea);
+		chatScrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+		chatScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+	}
 	private void setupLayout()
 	{
 		baseLayout.putConstraint(SpringLayout.NORTH, inputField, 0, SpringLayout.NORTH, chatButton);
