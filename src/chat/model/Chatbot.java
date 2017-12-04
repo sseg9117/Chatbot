@@ -31,6 +31,7 @@ public class Chatbot
 		this.topics = new String [7];
 		this.verbs = new String [4];
 		this.followUps = new String [5];
+		this.currentTime = LocalTime.now();
 		/**
 		 * this is all the things initialized
 		 */
@@ -106,7 +107,9 @@ public class Chatbot
 	
 	{
 		String chatbotResponse = "";
+		chatbotResponse += currentTime.getHour() + ":" + currentTime.getMinute() + " ";
 		chatbotResponse += "you said: " + "\n" + input + "\n";
+		
 		chatbotResponse += buildChatbotResponse();
 		
 		return chatbotResponse;
