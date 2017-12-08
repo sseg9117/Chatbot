@@ -287,7 +287,7 @@ public class Chatbot
 				return true;
 			}
 		}
-		return false;
+		return true;
 	}
 		public boolean movieGenreChecker(String genre)
 	{
