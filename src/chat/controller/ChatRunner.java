@@ -5,6 +5,10 @@ package chat.controller;
  */
 public class ChatRunner
 {
+	/**
+	 * Starts everything
+	 * @param args  UNSED
+	 */
 	public static void main (String [] args)
 	{
 		ChatbotController myapp = new ChatbotController();

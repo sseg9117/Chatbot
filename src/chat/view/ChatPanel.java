@@ -101,5 +101,18 @@ public class ChatPanel extends JPanel
 						 
 			}
 		});
+		
+		checkerButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				String userText = inputField.getText();
+				String displayText = appController.useCheckers(userText);
+				chatArea.append(displayText);
+				inputField.setText("");			
+			}
+		});
+				
 	}
+	
 }

@@ -41,19 +41,50 @@ public class ChatbotController
 		
 		return chatbotSays;
 	}
+	public String useCheckers(String Text)
+	{
+		String response = "";
+		
+		if(chatbot.contentChecker(Text))
+		{
+			response += "This text matches the special content\n";
+		}
+		if(chatbot.cuteAnimalMemeChecker(Text))
+		{
+			response += "";
+		}
+		if(chatbot.userNameChecker(Text))
+		{
+			response += "";
+		}
+		if(chatbot.shoppingListChecker(Text))
+		{
+			response += "";
+		}
+		if(chatbot.movieTitleChecker(Text))
+		{
+			response += "";
+		}
+		if(chatbot.movieGenreChecker(Text))
+		{
+			response += "";
+		}
+		return response;
+	}
+
 	private void close()
 	{
 		display.displayText("Goodbye");
 		System.exit(0);
 	}
-	
-	private String popupChat(String chat)
-	{
-		String chatbotSays = "";  //Assigns a valid value to a variable that will be returned for the method.
-		
-		chatbotSays += chatbot.processConversation(chat);
-		
-		return chatbotSays;
-	}
+//	
+//	private String popupChat(String chat)
+//	{
+//		String chatbotSays = "";  //Assigns a valid value to a variable that will be returned for the method.
+//		
+//		chatbotSays += chatbot.processConversation(chat);
+//		
+//		return chatbotSays;
+//	}
 
 } 
