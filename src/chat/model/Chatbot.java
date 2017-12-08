@@ -236,6 +236,13 @@ public class Chatbot
 	
 	public boolean cuteAnimalMemeChecker(String input)
 	{
+		for(String item : cuteAnimalMemes)
+		{
+			if(input.toLowerCase().contains(item)) 
+			{
+				return true;
+			}
+		}
 		return false;
 	}
 	
@@ -258,6 +265,10 @@ public class Chatbot
 	
 	public boolean movieGenreChecker(String genre)
 	{
+		if(genre.toLowerCase().equals("documentary") || genre.toLowerCase().equals("thriller"))
+		{
+			return true;
+		}
 		return false;
 	}
 
