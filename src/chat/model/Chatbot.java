@@ -277,7 +277,7 @@ public class Chatbot
 	}
 	
 	public boolean movieTitleChecker(String title)
-	{{
+	{
 		for(Movie thisMovie : movieList)
 		{
 			if(thisMovie.toString().equals(title))
