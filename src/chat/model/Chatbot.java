@@ -312,9 +312,34 @@ public class Chatbot
 
 	public boolean keyboardMashChecker(String sample)
 	{
+		//The word "were" can be incorrectly shown as mash so I check for that first
+		if(sample.toLowerCase().contains("were"))
+		{
+			return false;
+		}
+		
+		String keyboard = "iojarijadsioaznvlkasdnmf pasdf234568-=[}";
+		for (int index = 0; index < sample.length() - 2; index ++)
+		{
+			String sampleKeys = sample.substring(index, index + 3);
+			for(int i = 0; i < keyboard.length() - 2; i++)
+			{
+				String keys = keyboard.substring(i, i + 3);
+				//check forwards
+				if(keys.equals(sampleKeys.toLowerCase()))
+				{
+					return true;
+				}
+				//check backwards
+				keys = keys.substring(2, 3) + keys.substring(1, 2) + keys.substring(0, 1);
+				if(keys.equals(sampleKeys.toLowerCase()))
+				{
+					return true;
+				}
+			}
+		}
 		return false;
 	}
-	
 	public List<Movie> getMovieList()
 	{
 		return movieList;
@@ -367,6 +392,7 @@ public class Chatbot
 	
 	public LocalTime getCurrentTime()
 	{
+		currentTime = LocalTime.now();
 		return currentTime;
 	}
 	
@@ -379,4 +405,8 @@ public class Chatbot
 	{
 		this.content = content;
 	}
+//	public String toString();
+//	{
+//		return null;
+//	}
 }
