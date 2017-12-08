@@ -82,6 +82,8 @@ public class Chatbot
 		shoppingList.add("protein");
 		shoppingList.add("snacks");
 		shoppingList.add("veggies");
+		shoppingList.add("fruit");
+		shoppingList.add("Burger");
 	}
 	/**
 	 * this builds the cute animal list
@@ -115,13 +117,13 @@ public class Chatbot
 	private void buildQuestions()
 	{
 		questions[0] = "What is your name?";
-		questions[1] = "What do you want to eat/";
+		questions[1] = "What do you want to eat?";
 		questions[2] = "What is your favorite color?";
 		questions[3] = "Who is your favorite animal?";
 		questions[4] = "What is your favorite movie?";
 		questions[5] = "What is your favorite food?";
-		questions[6] = "What is the name of your faviorte tv actor";
-		questions[7] = "Have you ever done bad things";
+		questions[6] = "What is the name of your faviorte tv actor?";
+		questions[7] = "Have you ever done bad things?";
 		questions[8] = "Why are you not cool?";
 		questions[9] = "Do you eat people?";
 	}
@@ -249,7 +251,7 @@ public class Chatbot
 	
 	public boolean contentChecker(String contentCheck)
 	{
-		return false;
+		return true;
 	}
 	
 	public boolean cuteAnimalMemeChecker(String input)
@@ -318,7 +320,7 @@ public class Chatbot
 			return false;
 		}
 		
-		String keyboard = "iojarijadsioaznvlkasdnmf pasdf234568-=[}";
+		String keyboard = "iojarijadsioaznvlkasdnmfdfgpasdf234568-=[}";
 		for (int index = 0; index < sample.length() - 2; index ++)
 		{
 			String sampleKeys = sample.substring(index, index + 3);
