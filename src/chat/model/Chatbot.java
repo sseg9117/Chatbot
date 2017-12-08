@@ -330,7 +330,7 @@ public class Chatbot
 			return false;
 		}
 		
-		String keyboard = "iojarijadsioaznvlkasdnmfdfgpasdf234568-=[}";
+		String keyboard = "sdfSDFdfgcvb,./kjhDFGCVBKJH";
 		for (int index = 0; index < sample.length() - 2; index ++)
 		{
 			String sampleKeys = sample.substring(index, index + 3);
@@ -417,8 +417,9 @@ public class Chatbot
 	{
 		this.content = content;
 	}
+//	
 //	public String toString();
 //	{
-//		return null;
+//		return true;
 //	}
 }
