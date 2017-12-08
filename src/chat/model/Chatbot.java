@@ -67,12 +67,16 @@ public class Chatbot
 		new Movie("Hidden Figures");
 		new Movie("Pirates of the Caribbean");
 		new Movie("Spider Man");
+		new Movie("James bond");
+		new Movie("Jason Bourne");
 		
 		movieList.add(new Movie("Star Wars"));
 		movieList.add(new Movie("21 Jump Street"));
 		movieList.add(new Movie("Hidden Figures"));
 		movieList.add(new Movie("Pirates of the Caribbean"));
 		movieList.add(new Movie("Spider Man"));
+		movieList.add(new Movie("James bond"));
+		movieList.add(new Movie("Jason Bourne"));
 	}
 	/**
 	 * this builds the shopping list
@@ -84,6 +88,12 @@ public class Chatbot
 		shoppingList.add("veggies");
 		shoppingList.add("fruit");
 		shoppingList.add("Burger");
+		shoppingList.add("Sandwhich");
+		shoppingList.add("Spinach");
+		shoppingList.add("Ham");
+		shoppingList.add("Turkey");
+		shoppingList.add("Donuts");
+		shoppingList.add("Cheese");
 	}
 	/**
 	 * this builds the cute animal list
@@ -287,7 +297,7 @@ public class Chatbot
 				return true;
 			}
 		}
-		return true;
+		return false;
 	}
 		public boolean movieGenreChecker(String genre)
 	{

@@ -28,7 +28,7 @@ public class Movie
 
 	public Movie(String string)
 	{
-
+		
 	}
 /**
  * gets all the contructures you initalized up top
