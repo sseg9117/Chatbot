@@ -27,7 +27,7 @@ public class Chatbot
 		this.intro = null;
 		this.currentTime = null;
 		this.questions = new String [10];
-		this.content = null;
+		this.content = "-No content entered-";
 		this.topics = new String [7];
 		this.verbs = new String [4];
 		this.followUps = new String [5];
@@ -42,6 +42,7 @@ public class Chatbot
 		buildCuteAnimals();
 		getCurrentTime();
 		buildChatbotResponse();
+		buildTopics();
 		
 
 	}
@@ -93,7 +94,24 @@ public class Chatbot
 		cuteAnimalMemes.add("otter");
 		cuteAnimalMemes.add("kittie");
 	}
-	
+	/**
+	 * Builds the Chatbot's topics array
+	 */
+	private void buildTopics()
+	{
+		topics[0] = "Brand";
+		topics[1] = "children";
+		topics[2] = "Animals";
+		topics[3] = "games";
+		topics[4] = "sports";
+		topics[5] = "movies";
+		topics[6] = "cute animal memes";
+	}
+	/**
+	 * Takes the user's text input and gives the Chatbot's response as a string
+	 * @param input - What the user typed in
+	 * @return The Chatbot's response
+	 */
 	private void buildQuestions()
 	{
 		questions[0] = "What is your name?";
@@ -259,11 +277,17 @@ public class Chatbot
 	}
 	
 	public boolean movieTitleChecker(String title)
-	{
+	{{
+		for(Movie thisMovie : movieList)
+		{
+			if(thisMovie.toString().equals(title))
+			{
+				return true;
+			}
+		}
 		return false;
 	}
-	
-	public boolean movieGenreChecker(String genre)
+		public boolean movieGenreChecker(String genre)
 	{
 		if(genre.toLowerCase().equals("documentary") || genre.toLowerCase().equals("thriller"))
 		{
