@@ -96,8 +96,20 @@ public class Chatbot
 	
 	private void buildQuestions()
 	{
-		
+		questions[0] = "What is your name?";
+		questions[1] = "What do you want to eat/";
+		questions[2] = "What is your favorite color?";
+		questions[3] = "Who is your favorite animal?";
+		questions[4] = "What is your favorite movie?";
+		questions[5] = "What is your favorite food?";
+		questions[6] = "What is the name of your faviorte tv actor";
+		questions[7] = "Have you ever done bad things";
+		questions[8] = "Why are you not cool?";
+		questions[9] = "Do you eat people?";
 	}
+	/**
+	 * Builds the Chatbot's topics array
+	 */
 	/**
 	 * takes user text input and processes it and returns a string, and combines user in and chatbot string into one string and returns it.
 	 * @param input User supplied text.
@@ -213,8 +225,9 @@ public class Chatbot
 				return false;
 			}
 		}
-		return false;
+		return true;
 	}
+	
 	
 	public boolean contentChecker(String contentCheck)
 	{
