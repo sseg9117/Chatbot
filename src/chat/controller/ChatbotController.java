@@ -87,4 +87,20 @@ public class ChatbotController
 //		return chatbotSays;
 //	}
 
+	public Object getChatbot()
+	{
+		return chatbot;
+	}
+
+	public Object getDisplay()
+	{
+		return display;
+	}
+
+	public Object getChatFrame()
+	{
+		return appFrame;
+	}
+
+
 } 

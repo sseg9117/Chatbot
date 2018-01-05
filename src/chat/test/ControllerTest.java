@@ -1,15 +1,16 @@
 package chat.test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import chat.controller.ChatbotController;
 import chat.model.Chatbot;
-import chat.model.ChatbotController;
-import chat.view.PopupDisplay;
 import chat.view.ChatFrame;
+import chat.view.PopupDisplay;
 
 public class ControllerTest
 {

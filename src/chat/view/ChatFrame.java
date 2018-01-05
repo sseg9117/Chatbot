@@ -7,6 +7,10 @@ import chat.controller.ChatbotController;
 public class ChatFrame extends JFrame
 {
 	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	/**
 	 * get access to other clases/packages
 	 */
 	private ChatbotController appController;
@@ -15,7 +19,7 @@ public class ChatFrame extends JFrame
 	public ChatFrame(ChatbotController appController)
 	{
 		super();
-		this.appController = appController;
+		this.setAppController(appController);
 		appPanel = new ChatPanel(appController);		
 		setupFrame();
 	}
@@ -30,7 +34,19 @@ public class ChatFrame extends JFrame
 		this.setContentPane(appPanel);
 		this.setResizable(false);
 		this.setVisible(true);
-	}	
+	}
+public Object getBaseController()
+{
+	return null;
+}
+public ChatbotController getAppController()
+{
+	return appController;
+}
+public void setAppController(ChatbotController appController)
+{
+	this.appController = appController;
+}
 
 }
 
