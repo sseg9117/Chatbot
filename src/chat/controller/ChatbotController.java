@@ -1,5 +1,7 @@
 package chat.controller;
 
+import javax.swing.Popup;
+
 import chat.model.Chatbot;
 import chat.view.ChatFrame;
 import chat.view.PopupDisplay;
@@ -101,6 +103,10 @@ public class ChatbotController
 	{
 		return appFrame;
 	}
-
+	
+	public void HandleError(Exception Error)
+	{
+		Popup.displayText(Error.getMessage());
+	}
 
 } 
