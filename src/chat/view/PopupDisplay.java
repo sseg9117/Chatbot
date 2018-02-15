@@ -1,16 +1,28 @@
 package chat.view;
 
-public class PopupDisplay
+import javax.swing.JOptionPane;
+import javax.swing.ImageIcon;
+
+public class PopupDisplay 
 {
-
-	public String collectResponse(String string)
+	
+	private ImageIcon icon;
+	private String windowTitle;
+	
+	public PopupDisplay()
 	{
-		return null;
+		icon = new ImageIcon(getClass().getResource("images/Santa.png"));
+		windowTitle = "Santa says";
 	}
-
-	public void displayText(String string)
+	
+	public void displayText(String message)
 	{
-		
+		JOptionPane.showMessageDialog(null, message, windowTitle, JOptionPane.INFORMATION_MESSAGE, icon);
 	}
-
+	public String getResponse(String question)
+	{
+		String answer = "";
+		answer += JOptionPane.showInputDialog(null, question, windowTitle, JOptionPane.PLAIN_MESSAGE, icon, null, "");
+		return answer;
+	}
 }
