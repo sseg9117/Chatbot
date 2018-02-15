@@ -106,7 +106,12 @@ public class ChatbotController
 	
 	public void HandleError(Exception Error)
 	{
-		Popup.displayText(Error.getMessage());
+		display.displayText(Error.getMessage());
 	}
-
+	
+	public void sendTweet(String send)
+	{
+		
+	}
+	
 } 

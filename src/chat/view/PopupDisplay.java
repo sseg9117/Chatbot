@@ -11,7 +11,7 @@ public class PopupDisplay
 	
 	public PopupDisplay()
 	{
-		icon = new ImageIcon(getClass().getResource("images/Santa.png"));
+		icon = new ImageIcon(getClass().getResource("images/"));
 		windowTitle = "Santa says";
 	}
 	
