@@ -2,6 +2,7 @@ package chat.model;
 
 import chat.controller.ChatbotController;
 import twitter4j.Twitter;
+import twitter4j.TwitterException;
 import twitter4j.TwitterFactory;
 
 
@@ -20,7 +21,19 @@ public class CTECTwitter
 	
 	public void sendTweet(String textToTweet)
 	{
-		
+		try
+		{
+			chatbotTwitter.updateStatus(textToTweet + "@ChatbotCTEC");
+		}
+		catch(TwitterException tweetError)
+		{
+			appController.HandleError(tweetError);
+		}
+		catch(Exception otherError)
+		{
+			
+			appController.HandleError(otherError);
+		}
 	}
 
 	public ChatbotController getAppController()

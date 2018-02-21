@@ -1,7 +1,6 @@
 package chat.controller;
 
-import javax.swing.Popup;
-
+import chat.model.CTECTwitter;
 import chat.model.Chatbot;
 import chat.view.ChatFrame;
 import chat.view.PopupDisplay;
@@ -11,10 +10,12 @@ public class ChatbotController
 	private Chatbot chatbot;
 	private PopupDisplay display;
 	private ChatFrame appFrame;
+	private CTECTwitter myTwitter;
 	
 	public ChatbotController()
 	{
 		chatbot = new Chatbot("Sheradon Segota");
+		myTwitter = new CTECTwitter(this);
 		display = new PopupDisplay();
 		appFrame = new ChatFrame(this);
 	}
@@ -112,6 +113,10 @@ public class ChatbotController
 	public void sendTweet(String send)
 	{
 		
+	}
+	public void tweet(String text)
+	{
+		myTwitter.sendTweet(text);
 	}
 	
 } 
