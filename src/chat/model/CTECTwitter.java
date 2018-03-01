@@ -1,5 +1,7 @@
 package chat.model;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import chat.controller.ChatbotController;
@@ -21,8 +23,10 @@ public class CTECTwitter
 	
 	public CTECTwitter(ChatbotController appController)
 	{
-		this.setAppController(appController);
-		this.setChatbotTwitter(TwitterFactory.getSingleton());
+		this.appController = appController;
+		this.searchedTweets = new ArrayList<Status>();
+		this.tweetedWords = new ArrayList<String>();
+		this.chatbotTwitter = TwitterFactory.getSingleton();
 		
 	}
 	
@@ -42,6 +46,16 @@ public class CTECTwitter
 			appController.HandleError(otherError);
 		}
 	}
+	
+	public String getMostCommonWord(String username)
+	{
+		String mostCommon = "";
+		
+		collectTweets(username);
+		
+		return mostCommon;
+	}
+	
 	public void collectTweets(String username)
 	{
 		searchedTweets.clear();
@@ -74,6 +88,19 @@ public class CTECTwitter
 		}
 		
 	}
+	
+	private void turnStatusesToWords()
+	{
+		for(Status currentStatus : searchedTweets)
+		{
+			String tweetText = currentStatus.getText();
+			String [] tweetWords = tweetText.split(" ");
+			for(int index = 0; index < tweetWords.length; index++)
+			{
+				tweetedWords.add(removePunctuation(tweetWords[index]).trim());
+			}
+		}
+	}
 	public ChatbotController getAppController()
 	{
 		return appController;
@@ -94,10 +121,10 @@ public class CTECTwitter
 		this.chatbotTwitter = chatbotTwitter;
 	}
 
-	public String getMostCommonWord(String text)
-	{
-		String mostCommon = "";
-		
-		return mostCommon;
-	}
+//	public String getMostCommonWord(String text)
+//	{
+//		String mostCommon = "";
+//		
+//		return mostCommon;
+//	}
 }

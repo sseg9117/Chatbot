@@ -2,6 +2,7 @@ package chat.view;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -15,7 +16,6 @@ import javax.swing.JTextField;
 import javax.swing.SpringLayout;
 
 import chat.controller.ChatbotController;
-import java.awt.Font;
 
 public class ChatPanel extends JPanel
 {
@@ -41,8 +41,10 @@ public class ChatPanel extends JPanel
 		searchButton.setFont(new Font("Lucida Grande", Font.PLAIN, 11));
 		saveButton = new JButton("Save", new ImageIcon(getClass().getResource("/chat/view/images/Chat.png")));
 		loadButton = new JButton("Load", new ImageIcon(getClass().getResource("/chat/view/images/Load.png")));
-		loadButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		loadButton.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
 			}
 		});
 		chatButton = new JButton("Chat", new ImageIcon(getClass().getResource("/chat/view/images/Chat.png")));
@@ -51,29 +53,6 @@ public class ChatPanel extends JPanel
 		inputField = new JTextField(20);
 		chatScrollPane = new JScrollPane();
 		baseLayout = new SpringLayout();
-		baseLayout.putConstraint(SpringLayout.SOUTH, loadButton, -70, SpringLayout.SOUTH, this);
-		baseLayout.putConstraint(SpringLayout.SOUTH, searchButton, -147, SpringLayout.SOUTH, this);
-		baseLayout.putConstraint(SpringLayout.SOUTH, saveButton, -147, SpringLayout.SOUTH, this);
-		baseLayout.putConstraint(SpringLayout.WEST, tweetButton, 25, SpringLayout.EAST, loadButton);
-		baseLayout.putConstraint(SpringLayout.EAST, tweetButton, -13, SpringLayout.WEST, chatButton);
-		baseLayout.putConstraint(SpringLayout.NORTH, chatButton, 37, SpringLayout.SOUTH, chatScrollPane);
-		baseLayout.putConstraint(SpringLayout.WEST, chatButton, 13, SpringLayout.EAST, searchButton);
-		baseLayout.putConstraint(SpringLayout.SOUTH, chatButton, -49, SpringLayout.SOUTH, this);
-		baseLayout.putConstraint(SpringLayout.EAST, chatButton, 0, SpringLayout.EAST, chatScrollPane);
-		baseLayout.putConstraint(SpringLayout.EAST, searchButton, -130, SpringLayout.EAST, this);
-		baseLayout.putConstraint(SpringLayout.WEST, searchButton, 20, SpringLayout.EAST, saveButton);
-		baseLayout.putConstraint(SpringLayout.NORTH, saveButton, 0, SpringLayout.NORTH, searchButton);
-		baseLayout.putConstraint(SpringLayout.NORTH, loadButton, 0, SpringLayout.NORTH, tweetButton);
-		baseLayout.putConstraint(SpringLayout.NORTH, tweetButton, 10, SpringLayout.SOUTH, searchButton);
-		baseLayout.putConstraint(SpringLayout.SOUTH, tweetButton, -92, SpringLayout.SOUTH, this);
-		baseLayout.putConstraint(SpringLayout.EAST, loadButton, -242, SpringLayout.EAST, this);
-		baseLayout.putConstraint(SpringLayout.WEST, saveButton, 266, SpringLayout.WEST, this);
-		baseLayout.putConstraint(SpringLayout.WEST, loadButton, 266, SpringLayout.WEST, this);
-		baseLayout.putConstraint(SpringLayout.EAST, saveButton, -242, SpringLayout.EAST, this);
-		baseLayout.putConstraint(SpringLayout.NORTH, searchButton, 59, SpringLayout.SOUTH, chatScrollPane);
-		baseLayout.putConstraint(SpringLayout.WEST, inputField, 33, SpringLayout.WEST, this);
-		baseLayout.putConstraint(SpringLayout.EAST, inputField, -273, SpringLayout.EAST, this);
-		baseLayout.putConstraint(SpringLayout.NORTH, inputField, 23, SpringLayout.SOUTH, chatScrollPane);
 		infoLabel = new JLabel("Type to chat with the chatbot");
 
 		setupScrollPane();
@@ -114,6 +93,29 @@ public class ChatPanel extends JPanel
 	}
 	private void setupLayout()
 	{
+		baseLayout.putConstraint(SpringLayout.SOUTH, loadButton, -70, SpringLayout.SOUTH, this);
+		baseLayout.putConstraint(SpringLayout.SOUTH, searchButton, -147, SpringLayout.SOUTH, this);
+		baseLayout.putConstraint(SpringLayout.SOUTH, saveButton, -147, SpringLayout.SOUTH, this);
+		baseLayout.putConstraint(SpringLayout.WEST, tweetButton, 25, SpringLayout.EAST, loadButton);
+		baseLayout.putConstraint(SpringLayout.EAST, tweetButton, -13, SpringLayout.WEST, chatButton);
+		baseLayout.putConstraint(SpringLayout.NORTH, chatButton, 37, SpringLayout.SOUTH, chatScrollPane);
+		baseLayout.putConstraint(SpringLayout.WEST, chatButton, 13, SpringLayout.EAST, searchButton);
+		baseLayout.putConstraint(SpringLayout.SOUTH, chatButton, -49, SpringLayout.SOUTH, this);
+		baseLayout.putConstraint(SpringLayout.EAST, chatButton, 0, SpringLayout.EAST, chatScrollPane);
+		baseLayout.putConstraint(SpringLayout.EAST, searchButton, -130, SpringLayout.EAST, this);
+		baseLayout.putConstraint(SpringLayout.WEST, searchButton, 20, SpringLayout.EAST, saveButton);
+		baseLayout.putConstraint(SpringLayout.NORTH, saveButton, 0, SpringLayout.NORTH, searchButton);
+		baseLayout.putConstraint(SpringLayout.NORTH, loadButton, 0, SpringLayout.NORTH, tweetButton);
+		baseLayout.putConstraint(SpringLayout.NORTH, tweetButton, 10, SpringLayout.SOUTH, searchButton);
+		baseLayout.putConstraint(SpringLayout.SOUTH, tweetButton, -92, SpringLayout.SOUTH, this);
+		baseLayout.putConstraint(SpringLayout.EAST, loadButton, -242, SpringLayout.EAST, this);
+		baseLayout.putConstraint(SpringLayout.WEST, saveButton, 266, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.WEST, loadButton, 266, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.EAST, saveButton, -242, SpringLayout.EAST, this);
+		baseLayout.putConstraint(SpringLayout.NORTH, searchButton, 59, SpringLayout.SOUTH, chatScrollPane);
+		baseLayout.putConstraint(SpringLayout.WEST, inputField, 33, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.EAST, inputField, -273, SpringLayout.EAST, this);
+		baseLayout.putConstraint(SpringLayout.NORTH, inputField, 23, SpringLayout.SOUTH, chatScrollPane);
 		baseLayout.putConstraint(SpringLayout.NORTH, chatScrollPane, 20, SpringLayout.NORTH, this);
 		baseLayout.putConstraint(SpringLayout.WEST, chatScrollPane, 25, SpringLayout.WEST, this);
 		baseLayout.putConstraint(SpringLayout.EAST, chatScrollPane, -25, SpringLayout.EAST, this);
@@ -167,7 +169,9 @@ public class ChatPanel extends JPanel
 		{
 			public void actionPerformed(ActionEvent click)
 			{
+				String usernameToSearch = inputField.getText();
 				
+				chatArea.setText(appController.search(inputField.getText()));
 			}
 		});
 		
