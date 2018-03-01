@@ -1,7 +1,6 @@
 package chat.model;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import chat.controller.ChatbotController;
@@ -20,6 +19,7 @@ public class CTECTwitter
 	private Twitter chatbotTwitter;
 	private List<Status> searchedTweets;
 	private List<String> tweetedWords;
+	private long totalWordCount;
 	
 	public CTECTwitter(ChatbotController appController)
 	{
@@ -27,6 +27,7 @@ public class CTECTwitter
 		this.searchedTweets = new ArrayList<Status>();
 		this.tweetedWords = new ArrayList<String>();
 		this.chatbotTwitter = TwitterFactory.getSingleton();
+		this.totalWordCount = 0;
 		
 	}
 	
@@ -52,6 +53,8 @@ public class CTECTwitter
 		String mostCommon = "";
 		
 		collectTweets(username);
+		turnStatusesToWords();
+		totalWordCount = tweetedWords.size();
 		
 		return mostCommon;
 	}
@@ -112,8 +115,7 @@ public class CTECTwitter
 			if (punctuation.indexOf(currentString.charAt(i))== -1)
 			{
 				scrubbedString += currentString.charAt(i);
-			}
-			
+			}		
 		}
 		return scrubbedString;
 	}
