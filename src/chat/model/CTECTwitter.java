@@ -68,12 +68,18 @@ public class CTECTwitter
 		return mostCommon;
 	}
 	
-	private void generateWordCount()
-	{
-		
-	}
-
 	private void removeBlanks()
+	{
+		for(int index = tweetedWords.size() - 1; index >= 0; index--)
+		{
+			if (tweetedWords.get(index).trim().length() == 0)
+			{
+				tweetedWords.remove(index);
+			}
+		}
+	}
+	
+	private void generateWordCount()
 	{
 		
 	}
