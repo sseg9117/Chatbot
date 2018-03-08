@@ -1,6 +1,7 @@
 package chat.model;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
 
@@ -22,6 +23,7 @@ public class CTECTwitter
 	private List<Status> searchedTweets;
 	private List<String> tweetedWords;
 	private long totalWordCount;
+	private HashMap<String, Integer> wordsAndCount;
 	
 	public CTECTwitter(ChatbotController appController)
 	{
@@ -29,6 +31,7 @@ public class CTECTwitter
 		this.searchedTweets = new ArrayList<Status>();
 		this.tweetedWords = new ArrayList<String>();
 		this.chatbotTwitter = TwitterFactory.getSingleton();
+		this.wordsAndCount = new HashMap<String, Integer>();
 		this.totalWordCount = 0;
 		
 	}
@@ -59,10 +62,22 @@ public class CTECTwitter
 		totalWordCount = tweetedWords.size();
 		String [] boring = creaateIgnoredWordArray();
 		trimTheBoringWords(boring);
+		removeBlanks();
+		generateWordCount();
 		
 		return mostCommon;
 	}
 	
+	private void generateWordCount()
+	{
+		
+	}
+
+	private void removeBlanks()
+	{
+		
+	}
+
 	private void trimTheBoringWords(String [] boringWords)
 	{
 		 for(int index = tweetedWords.size() - 1; index>= 0; index--)
@@ -79,7 +94,7 @@ public class CTECTwitter
 	}
 	public void collectTweets(String username)
 	{
-		searchedTweets.clear();
+		 searchedTweets.clear();
 		tweetedWords.clear();
 		
 		Paging statusPage = new Paging(1,100);
