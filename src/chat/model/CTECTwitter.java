@@ -2,8 +2,11 @@ package chat.model;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Hashtable;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 import chat.controller.ChatbotController;
 import chat.controller.IOController;
@@ -65,6 +68,16 @@ public class CTECTwitter
 		removeBlanks();
 		generateWordCount();
 		
+		int maxWord =0;
+		
+		Hashtable<String, Integer> topOne = wordsAndCount.entrySet().stream().sorted(Map.Entry.comparingByValue()).limit(1).collect(Collectors.toMap(Map.Entry :: getKey, Map.Entry :: getValue, (e1 , e2) -> e1, Hashtable :: new));
+		
+		String mostCOmmonWord = topOne.keys().nextElement();
+		maxWord = topOne.get(mostCOmmonWord);
+		
+		mostCommon = "The most common word in " + username + "'s "+ searchedTweets.size() + " tweets is "
+				+ mostCOmmonWord + " , and it was used " +maxWord + " times. This is out of " +
+				totalWordCount + " total words by the Twitter user: " ;
 		return mostCommon;
 	}
 	
